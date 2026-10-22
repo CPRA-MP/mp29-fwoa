@@ -7,7 +7,7 @@ import {
   ScopeDataProvider,
   ThemeProvider,
   TimeSelect,
-  analysisAtom,
+  modeAtom,
   catalogQueriesAtom,
   dataPermalinkAtom,
   selectedGeographiesAtom,
@@ -35,7 +35,7 @@ const hasChoices = (name, dataProps, analysis) => {
   const values = dataProps[name];
   if (values === undefined) return true;
   if (!Array.isArray(values)) return false;
-  if (analysis.dimension === name && analysis.operation.startsWith("subtract-"))
+  if (analysis.dimension === name && analysis.operation === "diff")
     return false;
   return true;
 };
@@ -123,7 +123,7 @@ function MiniPortalToolbar({
     if (!narrow) setOpen(false);
   }, [narrow]);
 
-  const analysis = useAtomValue(analysisAtom);
+  const analysis = useAtomValue(modeAtom);
   const dataPermalink = useAtomValue(dataPermalinkAtom);
   const catalogQueries = useAtomValue(catalogQueriesAtom);
 
@@ -306,7 +306,7 @@ export default function MiniPortalImpl({
   projectModelGroups = defaultProjectModelGroups,
   ...dataProps
 }) {
-  const analysis = useAtomValue(analysisAtom);
+  const analysis = useAtomValue(modeAtom);
   const filteredDataProps = Object.fromEntries(
     Object.entries(dataProps).filter(
       ([name]) => !hasChoices(name, dataProps, analysis),
