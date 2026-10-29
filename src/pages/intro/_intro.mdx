@@ -17,149 +17,91 @@ import Y2070 from "./_15-2070.md";
 import KeyTakeawayChangeBuildsOverTime from "./_17-key-takeaway-change-builds-over-time.md";
 import CallToAction from "./_18-call-to-action.md";
 
-{/* Frame numbers throughout this file are absolute frames of the source video at 10fps,
-taken from "261001_Frame Reference.pdf" — the storyboard that pairs every card and every
-yellow post-it year marker with the video frame it belongs to. Its last card is frame 131
-(the call to action). The pages below are matched to the storyboard cards by their text,
-in the same order — so if you add or drop a page, re-check it against the PDF rather than
-just renumbering around it. (The video stops at 2079, so there's no 2080 page; its text is
-folded into the 2070s page.)
-
-A page's startFrame is the frame of its *first* storyboard card. Several pages hold more
-than one card — their later cards (f15, f43–f53, f58) are intermediate beats the storyboard
-gives a frame but this file doesn't split a page for. The card at f63 straddles a page
-boundary (it shows the last paragraph of 2024 Current Conditions and the first of
-Understanding a Future Without Action); it's taken as the start of the latter. The
-storyboard's own timestamps disagree with its frame numbers in a few places (f2, f43, f47);
-the frame numbers are what's used here.
-
-The two kinds of frame props work differently. StoryLabel windows are exact: VideoStory
-toggles a label purely off `video.currentTime * fps`, so a label appears at the frame named
-here no matter how the pages above it lay out. StoryPage's startFrame/endFrame instead set
-the page's height, in direct proportion to the frame span — that proportionality is the
-only reason a card arrives near its own video frame, so a page whose frames don't match the
-storyboard doesn't just pace oddly, it drags every card after it off its frame.
-
-What still isn't frame-mapped: the title page and the call-to-action page both take a
-fixed length. (The storyboard does give the title page f0 and the call to action f131, but
-both render outside the framed-page flow.) Each one both pushes the cards after it later
-and (since the video scrubs across the container's full height) pulls every card in the
-story slightly earlier, so expect some residual drift until they're given frames or
-dropped.
-
-StoryLabel is placed as a sibling of StoryPage, not nested inside it — StoryPage's sticky
-content box is translated with a CSS transform, which would turn it into the containing
-block for a nested StoryLabel's fixed positioning and break its viewport-relative
-placement. */}
-
-<StoryTitlePage>
+<StoryTitlePage startFrame={0} endFrame={11}>
   <OpeningPurposeAndContext />
 </StoryTitlePage>
 
-{/* pan lets a label track a specific feature in the video as the user drags it,
-instead of staying pinned to a screen corner like the default */}
-
-<StoryPage startFrame={2} endFrame={27}>
+<StoryPage startFrame={11} endFrame={17}>
   <FormationOfSouthLouisiana />
 </StoryPage>
 
-<StoryPage startFrame={27} endFrame={39}>
+<StoryPage startFrame={17} endFrame={23}>
   <VisualizingCoastalChange />
 </StoryPage>
 
-{/* The historical record is one page the reader scrolls the map through rather than a page
-per year, so the year markers tick across the video's historical footage instead of tracking
-page boundaries — they deliberately carry over the pages that follow. These are the
-storyboard's post-it notes verbatim: an era range while the historical imagery cross-fades.
-The storyboard has no separate 2024/TODAY marker, so 2004-2024 stays up across the return to
-the present-day coast until the 2030s marker takes over. Every window's endFrame is the next
-window's startFrame, so a marker stays up until the one after it takes over; a gap would read
-as the timeline stalling. */}
-
-<StoryLabel startFrame={47} endFrame={49}>
+<StoryLabel startFrame={23} endFrame={25}>
   1932
 </StoryLabel>
-<StoryLabel startFrame={49} endFrame={51}>
+<StoryLabel startFrame={25} endFrame={27}>
   1932-1956
 </StoryLabel>
-<StoryLabel startFrame={51} endFrame={53}>
+<StoryLabel startFrame={27} endFrame={29}>
   1956-1985
 </StoryLabel>
-<StoryLabel startFrame={53} endFrame={55}>
+<StoryLabel startFrame={29} endFrame={31}>
   1985-2004
 </StoryLabel>
-<StoryLabel startFrame={55} endFrame={72}>
+<StoryLabel startFrame={31} endFrame={38}>
   2004-2024
 </StoryLabel>
 
-<StoryPage startFrame={39} endFrame={55}>
+<StoryPage startFrame={23} endFrame={38}>
   <MappingHistoricalLandChange />
 </StoryPage>
 
-<StoryPage startFrame={55} endFrame={63}>
-  <Y2024CurrentConditions />
-</StoryPage>
-
-<StoryPage startFrame={63} endFrame={72}>
+<StoryPage startFrame={38} endFrame={42}>
   <UnderstandingAFutureWithoutAction />
 </StoryPage>
 
-{/* Once the FWOA projection starts running, the storyboard counts year by year from 2030
-(f72) through 2079 (f121), one frame per year. That's too fast to read as individual years,
-so the labels here are per decade instead: each decade label starts on its xx30/xx40/…
-storyboard frame and runs until the next decade's. The 2070s label stays up until the Key
-Takeaway card at f125, since nothing in the storyboard replaces it before then. */}
+<StoryPage startFrame={42} endFrame={48}>
+  <Y2024CurrentConditions />
+</StoryPage>
 
-<StoryLabel startFrame={72} endFrame={82}>
+<StoryLabel startFrame={43} endFrame={53}>
   2030s
 </StoryLabel>
-<StoryLabel startFrame={82} endFrame={92}>
+<StoryLabel startFrame={53} endFrame={63}>
   2040s
 </StoryLabel>
-<StoryLabel startFrame={92} endFrame={102}>
+<StoryLabel startFrame={63} endFrame={73}>
   2050s
 </StoryLabel>
-<StoryLabel startFrame={102} endFrame={112}>
+<StoryLabel startFrame={73} endFrame={83}>
   2060s
 </StoryLabel>
-<StoryLabel startFrame={112} endFrame={125}>
+<StoryLabel startFrame={83} endFrame={93}>
   2070s
 </StoryLabel>
 
-{/* The land change legend for the projected maps, shown over the year-by-year frames only
-(2030 at f72 through 2079 at f121). It's a StoryLabel restyled into the top-right corner, just
-under the navbar, rather than a component of its own, since a StoryLabel already does the
-frame-window toggling. */}
-
 <StoryLabel
-  startFrame={72}
-  endFrame={122}
+  startFrame={43}
+  endFrame={93}
   className="!top-[calc(var(--header-height)+20px)] !bottom-auto !bg-white/90 !p-2 [&_img]:block [&_img]:w-[340px] [&_img]:max-w-[40dvw]"
 >
   ![Land change and confidence legend](/img/land_confidence_legend.svg)
 </StoryLabel>
 
-<StoryPage startFrame={72} endFrame={82}>
+<StoryPage startFrame={48} endFrame={55}>
   <Y2030 />
 </StoryPage>
 
-<StoryPage startFrame={82} endFrame={92}>
+<StoryPage startFrame={55} endFrame={65}>
   <Y2040 />
 </StoryPage>
 
-<StoryPage startFrame={92} endFrame={102}>
+<StoryPage startFrame={65} endFrame={75}>
   <Y2050 />
 </StoryPage>
 
-<StoryPage startFrame={102} endFrame={112}>
+<StoryPage startFrame={75} endFrame={85}>
   <Y2060 />
 </StoryPage>
 
-<StoryPage startFrame={112} endFrame={125}>
+<StoryPage startFrame={85} endFrame={98}>
   <Y2070 />
 </StoryPage>
 
-<StoryPage startFrame={125} endFrame={131}>
+<StoryPage startFrame={98} endFrame={101}>
   <KeyTakeawayChangeBuildsOverTime />
 </StoryPage>
 

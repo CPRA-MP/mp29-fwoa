@@ -62,12 +62,11 @@ export default function Home(): ReactNode {
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
       <main id="overview">
-        {/* 4 keeps every page at least a full page-height: the smallest frame gap
-        between adjacent cards in _intro.mdx is 6 (Key Takeaway at 125 to the call to
-        action at 131). Puts the 131-frame story at ~33 page-heights of scroll. */}
+        {/* Two frames per page-height gives even the shortest interval (f98–101)
+        room for the takeaway card to settle before the call to action. */}
         <VideoStory
-          src="https://api.mpdp.coastal.la.gov/static/video/intro-20261001.mp4"
-          framesPerPageHeight={4}
+          src="https://files.mpdap.coastal.la.gov/static/video/intro-20261027.mp4"
+          framesPerPageHeight={2}
         >
           <MDXContent>
             <Intro />

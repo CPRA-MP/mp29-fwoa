@@ -10,10 +10,20 @@ import StoryPage from "./StoryPage";
  * a shared track) so their heights are independent — `.right`'s copy can run
  * much longer than the title block without pulling extra height into whatever
  * sits above the subtitle. */
-export default function StoryTitlePage({ children }: { children: ReactNode }) {
+export default function StoryTitlePage({
+  children,
+  startFrame,
+  endFrame,
+}: {
+  children: ReactNode;
+  startFrame?: number;
+  endFrame?: number;
+}) {
   return (
     <StoryPage
       first
+      startFrame={startFrame}
+      endFrame={endFrame}
       className={[
         // StoryPage's default box (white card, capped width, padding) has the same
         // specificity as these overrides, so `!` forces them to win regardless of
