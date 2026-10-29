@@ -1,4 +1,4 @@
-# mp23-digital-plan-testing
+# mp29-fwoa
 Repo to build out code to test web-first production of MP datasets - set up to use MP23 data housed in the MPD.
 
 ## Preparing videos for scroll-scrubbing (`VideoStory`)

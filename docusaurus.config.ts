@@ -19,12 +19,12 @@ const config: Config = {
   url: "https://cpra-mp.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/mp23-digital-plan-testing/",
+  baseUrl: "/mp29-fwoa/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "cpra-mp", // Usually your GitHub org/user name.
-  projectName: "mp23-digital-plan-testing", // Usually your repo name.
+  projectName: "mp29-fwoa", // Usually your repo name.
 
   onBrokenLinks: "throw",
 
@@ -84,7 +84,7 @@ const config: Config = {
           routeBasePath: "plan",
           sidebarPath: "./sidebars.ts",
           editUrl:
-            "https://github.com/CPRA-MP/mp23-digital-plan-testing/tree/main",
+            "https://github.com/CPRA-MP/mp29-fwoa/tree/main",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -122,7 +122,7 @@ const config: Config = {
           position: "left",
         },
         {
-          href: "https://github.com/cpra-mp/mp23-digital-plan-testing",
+          href: "https://github.com/cpra-mp/mp29-fwoa",
           label: "GitHub",
           position: "right",
         },

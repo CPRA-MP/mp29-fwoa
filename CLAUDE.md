@@ -45,7 +45,7 @@ ldd "$BIN" 2>&1 | grep "not found"
 
 ```bash
 npm run start -- --port 3005 --no-open > /tmp/docusaurus-dev.log 2>&1 &
-timeout 30 bash -c 'until curl -sf http://localhost:3005/mp23-digital-plan-testing/ >/dev/null; do sleep 1; done'
+timeout 30 bash -c 'until curl -sf http://localhost:3005/mp29-fwoa/ >/dev/null; do sleep 1; done'
 ```
 
 ### Interactive checks (preferred): `playwright-cli`
@@ -60,7 +60,7 @@ It keeps a persistent browser session across commands, so multi-step flows (navi
 click, screenshot, read console) are one command each instead of one throwaway script:
 
 ```bash
-playwright-cli open http://localhost:3005/mp23-digital-plan-testing/
+playwright-cli open http://localhost:3005/mp29-fwoa/
 playwright-cli eval "() => window.scrollBy(0, 900)"
 playwright-cli screenshot
 playwright-cli console       # check for errors
@@ -98,7 +98,7 @@ const { chromium } = require("playwright");
 
   // Use waitUntil: "load", NOT "networkidle" — Docusaurus's dev server keeps a
   // websocket open for HMR, so networkidle never resolves and times out.
-  await page.goto("http://localhost:3005/mp23-digital-plan-testing/", { waitUntil: "load" });
+  await page.goto("http://localhost:3005/mp29-fwoa/", { waitUntil: "load" });
   await page.waitForTimeout(1200);
   await page.screenshot({ path: "/tmp/pw-check/initial-load.png" });
 
