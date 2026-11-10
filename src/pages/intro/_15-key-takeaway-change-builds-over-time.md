@@ -4,4 +4,4 @@ FWOA projections show how coastal change is expected to continue into the future
 
 No single map tells the full story. The clearest understanding comes from comparing patterns across time, spatial scales, and specific metrics.
 
-Scroll to continue exploring the FWOA below.
+**Scroll to continue exploring the FWOA below.**

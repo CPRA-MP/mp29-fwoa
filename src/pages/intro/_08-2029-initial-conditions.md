@@ -1,4 +1,6 @@
-## 2024 Current Conditions
+## 2029 Initial Conditions
+
+[introduce 2029 initial conditions.. This is the 2029 initial conditions land confidence map, which shows ...]
 
 Today’s coast is the link between past change and future projections. This land/water map was developed from observational data gathered through the end of 2024 from satellite imagery; LIDAR; and project design, construction, and monitoring efforts.
 

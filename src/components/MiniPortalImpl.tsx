@@ -126,11 +126,17 @@ function MiniPortalToolbar({
   const analysis = useAtomValue(modeAtom);
   const dataPermalink = useAtomValue(dataPermalinkAtom);
   const catalogQueries = useAtomValue(catalogQueriesAtom);
+  // A derived analysis (e.g. lnd_conf) can fold a dimension away entirely, in
+  // which case there is nothing for the reader to choose.
+  const subsumed = catalogQueries.structure.subsumedFor(
+    catalogQueries.derivedAnalysis,
+  );
 
   const activeDimensionConfigs = catalogQueries.activeDimensions
     .filter(
       (dim) =>
         dim.filterType === "select" &&
+        !subsumed.includes(dim.name) &&
         hasChoices(dim.name, dataProps, analysis),
     )
     .map((dimension) => {

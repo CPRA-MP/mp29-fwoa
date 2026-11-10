@@ -1,54 +1,54 @@
 ---
 sidebar_position: 1
-description: Model results for the Future Without Action scenario
+sidebar_label: Model Results
+description: Results of MP29 Future Without Action simulations
 ---
 
-# Model Results
+# What Could Louisiana's Coast Look Like in the Future?
 
-## What Could Louisiana's Coast Look Like in the Future?
+The Coastal Protection and Restoration Authority (CPRA) is mandated to develop, implement, and enforce a comprehensive plan for coastal protection and restoration in coastal Louisiana. Currently in development, the 2029 Coastal Master Plan (MP29) uses observations and data, predictive models, and a suite of future scenarios to evaluate how coastal Louisiana could change over the next 50 years and how restoration and risk reduction projects could affect future conditions.
 
-The Future Without Action (FWOA) modeling results show how Louisiana's coast may change over the next 50 years if no additional restoration or risk reduction projects are implemented.
+This page presents results of MP29 Future Without Action (FWOA) simulations as interactive maps and graphs. It also explains how to interpret those results, including the model inputs, assumptions, and limitations behind them.
 
-Explore projected changes in land and water, vegetation and habitat, wetland condition, and regional patterns across the coast. Each result highlights a different aspect of future coastal change to provide a broader picture of how Louisiana's landscape may evolve over time and from place to place. Viewing results across multiple years, locations, and indicators can help reveal patterns that may not be apparent from a single map or metric alone.
+## Why Does CPRA Model a Future Without Action? {/* #why-does-cpra-model-a-future-without-action */}
 
-## Understanding the Results
+CPRA plans, implements, and manages restoration and risk reduction efforts across Louisiana’s coastal zone, and the Coastal Master Plan guides those efforts. To estimate what proposed projects could accomplish, a master plan needs a baseline that shows how the coast could change without them. For MP29, FWOA simulations represent coastal conditions from 2029 through 2079 _without_ restoration or risk reduction projects beyond those assumed to be completed before 2029. CPRA uses these simulations as the reference for evaluating project influence during project selection.
 
-These results are designed provided soto help users can explore potential future coastal conditions and understand how different aspects of the coast may change over time.
+```mermaid
+---
+config:
+  flowchart:
+    curve: linear
+---
+flowchart LR
+  FWOA["FUTURE WITHOUT ACTION"] --> CPE["CANDIDATE PROJECT EFFECTS"]
+  FWA["FUTURE WITH ACTION"] --> CPE
+  CPE --> PS["PROJECT SELECTION"]
 
-The maps and visualizations can be used to identify broad trends, compare locations, and examine how changes in land, water, vegetation, habitat, and wetland condition relate to one another. Additional charts and time-series information provide more detail about how individual indicators change throughout the 50-year modeling period.
+  classDef run fill:#45aa94,stroke:#45aa94,color:#fff,font-weight:bold
+  classDef result fill:#a6d35a,stroke:#a6d35a,color:#fff,font-weight:bold
+  class FWOA,FWA run
+  class CPE,PS result
+```
 
-The results are not exact predictions of future conditions. They represent plausible futures based on the best available science, data, and assumptions used in the modeling effort. They should be considered alongside local knowledge, field observations, and project-specific information.
+As MP29 development continues, CPRA will run Future With Action (FWA) simulations that use the same initial conditions, planning period, and future scenarios as FWOA. Each FWA simulation will include one or more MP29 Candidate Projects. CPRA will compare FWA results with FWOA results to estimate project effects (i.e., benefits and/or other impacts) and to select projects that advance long-term restoration and risk reduction goals.
 
-## Explore the Results
+## Interpreting FWOA Results {/* #interpreting-fwoa-results */}
 
-The results are organized into three groups, each offering a different perspective on future coastal change to help us think about where, how, and when to intervene to change outcomes.
+FWOA results describe modeled conditions under the assumptions represented in each simulation. Outputs are typically provided as maps and/or time series graphs. Maps show modeled conditions for a specified period of time (e.g., daily, monthly, or annual), and graphs show how those conditions change over time.
 
-### Land & Water
+Modeled results should not be interpreted as forecasts. The models capture many, but not all, of the factors that influence change in a complicated and dynamic coastal system, and some important factors and processes are still not fully understood. For example, assumptions must be made to estimate current land or water-bottom elevation where data are lacking, especially in shallow water areas next to land. Results are also limited by the capability of the modeling tools and by assumptions about model inputs, including how scenarios capture known uncertainty.
 
-Explore projected changes in land type, land-water patterns, and water depth to understand how Louisiana's physical landscape may change over time.
+Considering results for multiple metrics from a scenario, year, and/or area together provides a fuller picture of potential future outcomes. For example, differences in outputs among scenarios show how metrics respond to different assumptions about the rate of sea level rise. As another example, land change can be driven by marsh edge erosion or by shifts in vegetation in response to environmental conditions that affect elevation. Exploring multiple metrics can help clarify what is driving the changes observed at a specific location.
 
-These results can help answer questions such as:
+## Exploring FWOA Results {/* #exploring-fwoa-results */}
 
-- Where may land be gained, lost, or transformed?
-- How might the balance between land and water change?
-- Where could water depths increase or decrease over time?
+MP29 FWOA results are available first from the Integrated Compartment Model (ICM), which simulates how Louisiana’s coastal landscape may change in the future, to be followed by results from the master plan risk models (Advanced Circulation and Simulating Waves Nearshore [ADCIRC+SWAN] and the Coastal Louisiana Risk Assessment [CLARA] model).
 
-### Vegetation & Habitat
+FWOA modeling examines how the coast could change if no additional projects are implemented beyond those assumed to be completed before 2029. Because future environmental conditions cannot be predicted with certainty, CPRA evaluated a range of possible scenarios for FWOA. The predictive models are connected: they consider interactions across the coast and changes over time, so what happens in one part of the system can influence conditions elsewhere or affect results later in a simulation.
 
-Explore marsh classification, vegetation communities, habitat diversity, and wetland value to understand potential ecological changes across the coast.
+## Scenario-Specific FWOA Results {/* #scenario-specific-fwoa-results */}
 
-These results help illustrate how coastal ecosystems may respond to changing environmental conditions and how habitat quality and diversity may vary through time.
+FWOA outputs are available for multiple scenarios, each assuming a different rate of sea level rise. For the currently available outputs, all scenarios draw on the CMIP6 SSP2-4.5 scenario for climate forcings, which represents “middle-of-the-road” conditions in which recent greenhouse gas emissions trends and current policies continue. Each scenario also includes future trajectories for environmental variables such as precipitation and temperature (also derived from CMIP6 SSP2-4.5) and for subsidence (sinking of the ground). These other climate-related conditions vary spatially and/or over time but not between scenarios.
 
-### Regional Perspectives
-
-Regional summaries provide another way to explore the results by highlighting local patterns, trends, and changes that may be less visible at the coastwide scale.
-
-Each result includes interactive maps, supporting visualizations, and additional information to help explain what the results show and how they should be interpreted.
-
-## Looking Coastwide
-
-No single result tells the whole story.
-
-Changes in land, water, vegetation, habitat, and wetland condition are closely connected. Looking across multiple results can provide a more complete understanding of how Louisiana's coast may change over the coming decades. They can also help to determineinform insights on what those changes could mean for communities, natural resources, industries, and working landscapeslivelihoods and how to address coastal challenges.
-
-For users interested in knowing more about the science behind the results, additional information about model assumptions, data sources, and analytical methods is available in the Data & Methods and Technical Details sections.
+After FWA runs are complete, CPRA will use results from two scenarios for project selection: **MP29 Scenarios A and B.** **MP29 Scenario A is a more central projection** that represents the median estimates based on “middle-of-the-road” climate assumptions. **MP29 Scenario B includes a less optimistic rate of sea level rise** that is less likely, but still possible, under the same climate assumptions. Scenario B is included because more rapid sea level rise, if it occurs, would significantly affect coastal conditions and the performance of some projects. Evaluating MP29 Candidate Projects under both scenarios helps identify projects expected to perform robustly across the range of possible future conditions evaluated, given related climate change assumptions.

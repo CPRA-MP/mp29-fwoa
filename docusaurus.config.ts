@@ -28,6 +28,12 @@ const config: Config = {
 
   onBrokenLinks: "throw",
 
+  markdown: {
+    mermaid: true,
+  },
+  themes: ["@docusaurus/theme-mermaid"],
+  clientModules: [require.resolve("./src/clientModules/d3-transition.ts")],
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
@@ -117,6 +123,11 @@ const config: Config = {
           position: "left",
         },
         {
+          href: "/plan/modeling-approach/",
+          label: "Modeling Approach",
+          position: "left",
+        },
+        {
           href: "/plan/technical-details/",
           label: "Technical Details",
           position: "left",
@@ -141,6 +152,10 @@ const config: Config = {
             {
               label: "Model Results",
               to: "/plan/results/",
+            },
+            {
+              label: "Modeling Approach",
+              to: "/plan/modeling-approach/",
             },
             {
               label: "Technical Details",

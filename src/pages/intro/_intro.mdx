@@ -5,17 +5,19 @@ import StoryLabel from "@site/src/components/StoryLabel";
 
 import OpeningPurposeAndContext from "./_01-opening-purpose-and-context.md";
 import FormationOfSouthLouisiana from "./_02-formation-of-south-louisiana.md";
-import VisualizingCoastalChange from "./_04-visualizing-coastal-change.md";
-import MappingHistoricalLandChange from "./_05-mapping-historical-land-change.md";
-import Y2024CurrentConditions from "./_07-2024-current-conditions.md";
-import UnderstandingAFutureWithoutAction from "./_08-understanding-a-future-without-action.md";
-import Y2030 from "./_11-2030.md";
-import Y2040 from "./_12-2040.md";
-import Y2050 from "./_13-2050.md";
-import Y2060 from "./_14-2060.md";
-import Y2070 from "./_15-2070.md";
-import KeyTakeawayChangeBuildsOverTime from "./_17-key-takeaway-change-builds-over-time.md";
-import CallToAction from "./_18-call-to-action.md";
+import VisualizingCoastalChange from "./_03-visualizing-coastal-change.md";
+import MappingHistoricalLandChange from "./_04-mapping-historical-land-change.md";
+import AFutureWithoutAction from "./_06-a-future-without-action.md";
+import IdentifyingLandAndWaterInTheFuture from "./_07-identifying-land-and-water-in-the-future.md";
+import Y2029InitialConditions from "./_08-2029-initial-conditions.md";
+import UnderstandingLandChange from "./_09-understanding-land-change.md";
+import Y2030 from "./_10-2030.md";
+import Y2040 from "./_11-2040.md";
+import Y2050 from "./_12-2050.md";
+import Y2060 from "./_13-2060.md";
+import Y2070 from "./_14-2070.md";
+import KeyTakeawayChangeBuildsOverTime from "./_15-key-takeaway-change-builds-over-time.md";
+import CallToAction from "./_16-call-to-action.md";
 
 <StoryTitlePage startFrame={0} endFrame={11}>
   <OpeningPurposeAndContext />
@@ -49,12 +51,23 @@ import CallToAction from "./_18-call-to-action.md";
   <MappingHistoricalLandChange />
 </StoryPage>
 
-<StoryPage startFrame={38} endFrame={42}>
-  <UnderstandingAFutureWithoutAction />
+{/* Frame ranges for these four cards are provisional until the new video
+(land confidence / 2029 initial conditions / land change frames) is ready. */}
+
+<StoryPage startFrame={38} endFrame={40}>
+  <AFutureWithoutAction />
 </StoryPage>
 
-<StoryPage startFrame={42} endFrame={48}>
-  <Y2024CurrentConditions />
+<StoryPage startFrame={40} endFrame={42}>
+  <IdentifyingLandAndWaterInTheFuture />
+</StoryPage>
+
+<StoryPage startFrame={42} endFrame={45}>
+  <Y2029InitialConditions />
+</StoryPage>
+
+<StoryPage startFrame={45} endFrame={48}>
+  <UnderstandingLandChange />
 </StoryPage>
 
 <StoryLabel startFrame={43} endFrame={53}>

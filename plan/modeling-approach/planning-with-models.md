@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 description: Using predictive modeling to make informed decisions
 ---
 
