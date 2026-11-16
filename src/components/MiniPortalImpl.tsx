@@ -1,5 +1,6 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { useAtomValue, Provider as JotaiProvider, atom, useAtom } from "jotai";
+import { useColorMode } from "@docusaurus/theme-common";
 import {
   Chart,
   DimensionSelect,
@@ -263,6 +264,7 @@ function MiniPortalToolbar({
 }
 
 function MiniPortalContent({ title, projectModelGroups, ...dataProps }) {
+  const { colorMode } = useColorMode();
   const selectedGeographies = useAtomValue(selectedGeographiesAtom);
   const [checkedModelGroups, setCheckedModelGroups] = useState(
     () => new Set(projectModelGroups.map(([value]) => value)),
@@ -299,7 +301,19 @@ function MiniPortalContent({ title, projectModelGroups, ...dataProps }) {
       <Suspense>
         {selectedGeographies.length > 0 && (
           <div className="h-125 max-h-[40vh] p-3">
-            <Chart />
+            {/* mp-ui's ThemeProvider only knows its own localStorage key and
+                the OS prefers-color-scheme, so it ignores the site's color mode
+                toggle. Point it at a key nothing writes so defaultTheme always
+                wins, and remount on toggle since it reads defaultTheme only
+                once. Chart is its only consumer, so wrap just the chart to keep
+                the toggle from remounting (and reloading) the map. */}
+            <ThemeProvider
+              key={colorMode}
+              defaultTheme={colorMode}
+              storageKey="mp29-fwoa-mini-portal-theme"
+            >
+              <Chart />
+            </ThemeProvider>
           </div>
         )}
       </Suspense>
@@ -322,13 +336,11 @@ export default function MiniPortalImpl({
   return (
     <JotaiProvider store={store}>
       <ScopeDataProvider {...filteredDataProps}>
-        <ThemeProvider>
-          <MiniPortalContent
-            title={title}
-            projectModelGroups={projectModelGroups}
-            {...dataProps}
-          />
-        </ThemeProvider>
+        <MiniPortalContent
+          title={title}
+          projectModelGroups={projectModelGroups}
+          {...dataProps}
+        />
       </ScopeDataProvider>
     </JotaiProvider>
   );
