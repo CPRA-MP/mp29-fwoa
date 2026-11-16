@@ -21,7 +21,7 @@ FFIBS habitat types classify vegetated land along a continuous gradient, from fo
   grid="veg_grid_cell_v002"
   time_unit="annual"
   model_group_id={706}
-  scenario_id={[[34, "A"], [38, "B"]]}
+  scenario_id={[[34, "A (50th)"], [35, "B (95th)"]]}
   geography="-91.01385,29.41441,-92.77441,29.72377,-89.42494,29.24865"
   map="7.55/29.74/-91.25"
 />
@@ -57,7 +57,7 @@ Vegetation Community Type (VCT) describes modeled vegetation using 15 distinct c
   grid="veg_grid_cell_v001"
   time_unit="annual"
   model_group_id={514}
-  scenario_id={[[7, "MP23 Lower"], [8, "MP23 Higher"]]}
+  scenario_id={[[7, "7 (Lower)"], [8, "8 (Higher)"]]}
   geography="-93.61823,29.79669,-91.00036,29.21602,-89.74236,29.61531"
   map="7.11/29.65/-92.03"
 />
@@ -93,7 +93,7 @@ ICM-HSIs are not yet available for MP29. The map below is a placeholder showing 
   grid="veg_grid_cell_v001"
   time_unit="annual"
   model_group_id={500}
-  scenario_id={[[7, "MP23 Lower"], [8, "MP23 Higher"]]}
+  scenario_id={[[7, "7 (Lower)"], [8, "8 (Higher)"]]}
   geography="-93.61823,29.79669,-91.00036,29.21602,-89.74236,29.61531"
   map="7.11/29.72/-91.48"
 />

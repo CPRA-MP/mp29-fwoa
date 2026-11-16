@@ -7,7 +7,7 @@ import MiniPortal from '@site/src/components/MiniPortal';
 
 # Land and Water
 
-export const mp29Scenarios = [[34, "A"], [38, "B"]];
+export const mp29Scenarios = [[34, "A (50th)"], [35, "B (95th)"]];
 
 The results below describe how the distribution and physical characteristics of land and water may change over time under MP29 Scenarios A and B. Land Type (plus water depth) shows the spatial distribution of land types and water classes for a given year. Land Change shows historic changes prior to 2029 and where the model predicts land will persist, be gained, or be lost from 2029 through 2079.
 
